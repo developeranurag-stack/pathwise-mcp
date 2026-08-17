@@ -1,8 +1,17 @@
 {
   "mcpServers": {
     "gov-job-extractor": {
-      "command": "/home/anuragpremsoni/webappprojects/pathwise-mcp/.venv/bin/python",
-      "args": ["/home/anuragpremsoni/webappprojects/pathwise-mcp/server.py"]
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--env-file",
+        "C:\\androidprojects\\pathwise-mcp\\.env",
+        "-v",
+        "C:\\androidprojects\\pathwise-mcp\\stored_pdfs:/app/stored_pdfs",
+        "pathwise-mcp"
+      ]
     }
   }
 }

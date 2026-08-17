@@ -57,3 +57,34 @@ Register `server.py` with your MCP client (Claude Desktop, Claude Code, etc.), p
 4. Call `save_job_to_database` to persist the result.
 
 Retrieval later goes through `job-pdf://{job_id}` or `view_official_notification`, independent of ingestion.
+
+## Running with Docker
+
+Build once:
+
+```bash
+docker build -t pathwise-mcp .
+```
+
+Prepare env (critical: same `DATABASE_URL` as pathwise):
+
+```bash
+cp .env.example .env
+# edit .env with the real shared Neon URL
+```
+
+Start (stdio mode for MCP clients):
+
+```bash
+docker run -i --rm \
+  --env-file .env \
+  -v "$(pwd)/stored_pdfs:/app/stored_pdfs" \
+  pathwise-mcp
+```
+
+For MCP client registration (e.g. `.mcp.json` or claude config), use the `docker` command + args shown in this repo's `.mcp.json` (adjust host paths as needed).
+
+**Caveat**: `local_pdf_path` saved to DB will be the *container* absolute path (e.g. `/app/stored_pdfs/...`). For the sibling `pathwise` to serve PDFs by direct FS read, either:
+- also run `pathwise` in a container with identical volume mount, or
+- bind-mount in a way that the recorded path is reachable from the host `pathwise` process.
+See AGENTS.md and CLAUDE.md for the shared state requirements.

@@ -5,3 +5,4 @@ __pycache__/
 stored_pdfs/
 .env
 tobeextracted/
+tobepicked/
