@@ -1,0 +1,1129 @@
+[
+  {
+    "code": "UPSC",
+    "name_en": "Union Public Service Commission",
+    "name_hi": "संघ लोक सेवा आयोग",
+    "state": null,
+    "url_hosts": [
+      "upsc.gov.in",
+      "upsconline.nic.in",
+      "upsconline.gov.in"
+    ],
+    "search_aliases": [
+      "upsc",
+      "cse",
+      "ias",
+      "ips",
+      "ifs",
+      "ese",
+      "ies",
+      "nda",
+      "cds",
+      "capf",
+      "cms",
+      "ifos"
+    ],
+    "exam_aliases": [
+      "CSE",
+      "IAS",
+      "IPS",
+      "IFS",
+      "IFoS",
+      "ESE",
+      "IES",
+      "CDS",
+      "NDA",
+      "CAPF",
+      "CMS",
+      "Civil Services Examination",
+      "Engineering Services Examination"
+    ]
+  },
+  {
+    "code": "SSC",
+    "name_en": "Staff Selection Commission",
+    "name_hi": "कर्मचारी चयन आयोग",
+    "state": null,
+    "url_hosts": [
+      "ssc.gov.in",
+      "ssc.nic.in",
+      "ssc.digitalgaruda.in"
+    ],
+    "search_aliases": [
+      "ssc",
+      "cgl",
+      "chsl",
+      "mts",
+      "gd",
+      "cpo",
+      "ssc je",
+      "stenographer"
+    ],
+    "exam_aliases": [
+      "CGL",
+      "CHSL",
+      "MTS",
+      "GD",
+      "CPO",
+      "JE",
+      "Stenographer",
+      "Combined Graduate Level",
+      "Combined Higher Secondary"
+    ]
+  },
+  {
+    "code": "RRB",
+    "name_en": "Railway Recruitment Board",
+    "name_hi": "रेलवे भर्ती बोर्ड",
+    "state": null,
+    "url_hosts": [
+      "rrbcdg.gov.in",
+      "rrbapply.gov.in",
+      "indianrailways.gov.in",
+      "rrb.indianrailways.gov.in"
+    ],
+    "search_aliases": [
+      "rrb",
+      "rrc",
+      "ntpc",
+      "railway",
+      "alp",
+      "group d"
+    ],
+    "exam_aliases": [
+      "NTPC",
+      "ALP",
+      "Group D",
+      "RRC",
+      "CEN"
+    ]
+  },
+  {
+    "code": "IBPS",
+    "name_en": "Institute of Banking Personnel Selection",
+    "name_hi": "इंस्टीट्यूट ऑफ बैंकिंग पर्सनेल सिलेक्शन",
+    "state": null,
+    "url_hosts": [
+      "ibps.in"
+    ],
+    "search_aliases": [
+      "ibps",
+      "ibps po",
+      "ibps clerk",
+      "ibps so"
+    ],
+    "exam_aliases": [
+      "PO",
+      "Clerk",
+      "SO",
+      "RRB"
+    ]
+  },
+  {
+    "code": "SBI",
+    "name_en": "State Bank of India",
+    "name_hi": "भारतीय स्टेट बैंक",
+    "state": null,
+    "url_hosts": [
+      "sbi.co.in",
+      "bank.sbi"
+    ],
+    "search_aliases": [
+      "sbi",
+      "sbi po",
+      "sbi clerk"
+    ],
+    "exam_aliases": [
+      "PO",
+      "Clerk",
+      "SO"
+    ]
+  },
+  {
+    "code": "RBI",
+    "name_en": "Reserve Bank of India",
+    "name_hi": "भारतीय रिजर्व बैंक",
+    "state": null,
+    "url_hosts": [
+      "rbi.org.in"
+    ],
+    "search_aliases": [
+      "rbi",
+      "rbi grade b"
+    ],
+    "exam_aliases": [
+      "Grade B",
+      "Assistant"
+    ]
+  },
+  {
+    "code": "NTA",
+    "name_en": "National Testing Agency",
+    "name_hi": "राष्ट्रीय परीक्षा एजेंसी",
+    "state": null,
+    "url_hosts": [
+      "nta.ac.in",
+      "ugcnet.nta.nic.in",
+      "examinationservices.nic.in"
+    ],
+    "search_aliases": [
+      "nta",
+      "ugc net",
+      "ugc-net"
+    ],
+    "exam_aliases": [
+      "UGC-NET",
+      "NET",
+      "CSIR NET"
+    ]
+  },
+  {
+    "code": "CGPSC",
+    "name_en": "Chhattisgarh Public Service Commission",
+    "name_hi": "छत्तीसगढ़ लोक सेवा आयोग",
+    "state": "Chhattisgarh",
+    "url_hosts": [
+      "psc.cg.gov.in",
+      "cgpsc.cg.gov.in",
+      "cgpsc.gov.in"
+    ],
+    "search_aliases": [
+      "cgpsc",
+      "sse",
+      "pcs",
+      "cce",
+      "chhattisgarh psc",
+      "psc.cg.gov.in"
+    ],
+    "exam_aliases": [
+      "SSE",
+      "राज्य सेवा परीक्षा",
+      "State Service Examination",
+      "CCE",
+      "PCS",
+      "State Engineering Service",
+      "राज्य अभियांत्रिकी सेवा"
+    ]
+  },
+  {
+    "code": "MPPSC",
+    "name_en": "Madhya Pradesh Public Service Commission",
+    "name_hi": "मध्य प्रदेश लोक सेवा आयोग",
+    "state": "Madhya Pradesh",
+    "url_hosts": [
+      "mppsc.mp.gov.in",
+      "mppsc.gov.in",
+      "mppsc.nic.in"
+    ],
+    "search_aliases": [
+      "mppsc",
+      "sse",
+      "pcs",
+      "madhya pradesh psc"
+    ],
+    "exam_aliases": [
+      "SSE",
+      "State Service Examination",
+      "PCS",
+      "राज्य सेवा परीक्षा"
+    ]
+  },
+  {
+    "code": "UPPSC",
+    "name_en": "Uttar Pradesh Public Service Commission",
+    "name_hi": "उत्तर प्रदेश लोक सेवा आयोग",
+    "state": "Uttar Pradesh",
+    "url_hosts": [
+      "uppsc.up.nic.in",
+      "uppsc.nic.in"
+    ],
+    "search_aliases": [
+      "uppsc",
+      "pcs",
+      "up pcs",
+      "ro aro"
+    ],
+    "exam_aliases": [
+      "PCS",
+      "RO/ARO",
+      "Lower Subordinate",
+      "प्रांतीय सिविल सेवा"
+    ]
+  },
+  {
+    "code": "UKPSC",
+    "name_en": "Uttarakhand Public Service Commission",
+    "name_hi": "उत्तराखण्ड लोक सेवा आयोग",
+    "state": "Uttarakhand",
+    "url_hosts": [
+      "ukpsc.gov.in",
+      "ukpsc.net.in"
+    ],
+    "search_aliases": [
+      "ukpsc",
+      "pcs",
+      "uttarakhand psc"
+    ],
+    "exam_aliases": [
+      "PCS",
+      "Upper Subordinate"
+    ]
+  },
+  {
+    "code": "BPSC",
+    "name_en": "Bihar Public Service Commission",
+    "name_hi": "बिहार लोक सेवा आयोग",
+    "state": "Bihar",
+    "url_hosts": [
+      "bpsc.bih.nic.in",
+      "bpsc.bihar.gov.in"
+    ],
+    "search_aliases": [
+      "bpsc",
+      "cce",
+      "bihar psc"
+    ],
+    "exam_aliases": [
+      "CCE",
+      "Combined Competitive Examination",
+      "PT",
+      "संयुक्त प्रतियोगिता परीक्षा"
+    ]
+  },
+  {
+    "code": "JPSC",
+    "name_en": "Jharkhand Public Service Commission",
+    "name_hi": "झारखण्ड लोक सेवा आयोग",
+    "state": "Jharkhand",
+    "url_hosts": [
+      "jpsc.gov.in"
+    ],
+    "search_aliases": [
+      "jpsc",
+      "cce",
+      "jharkhand psc"
+    ],
+    "exam_aliases": [
+      "CCE",
+      "Combined Civil Services"
+    ]
+  },
+  {
+    "code": "RPSC",
+    "name_en": "Rajasthan Public Service Commission",
+    "name_hi": "राजस्थान लोक सेवा आयोग",
+    "state": "Rajasthan",
+    "url_hosts": [
+      "rpsc.rajasthan.gov.in",
+      "rpsc.raj.nic.in"
+    ],
+    "search_aliases": [
+      "rpsc",
+      "ras",
+      "rts",
+      "rajasthan psc"
+    ],
+    "exam_aliases": [
+      "RAS",
+      "RTS",
+      "Rajasthan Administrative Service"
+    ]
+  },
+  {
+    "code": "HPSC",
+    "name_en": "Haryana Public Service Commission",
+    "name_hi": "हरियाणा लोक सेवा आयोग",
+    "state": "Haryana",
+    "url_hosts": [
+      "hpsc.gov.in"
+    ],
+    "search_aliases": [
+      "hpsc",
+      "hcs",
+      "haryana psc"
+    ],
+    "exam_aliases": [
+      "HCS",
+      "Haryana Civil Service"
+    ]
+  },
+  {
+    "code": "PPSC",
+    "name_en": "Punjab Public Service Commission",
+    "name_hi": "पंजाब लोक सेवा आयोग",
+    "state": "Punjab",
+    "url_hosts": [
+      "ppsc.gov.in"
+    ],
+    "search_aliases": [
+      "ppsc",
+      "pcs",
+      "punjab psc"
+    ],
+    "exam_aliases": [
+      "PCS",
+      "Punjab Civil Service"
+    ]
+  },
+  {
+    "code": "GPSC",
+    "name_en": "Gujarat Public Service Commission",
+    "name_hi": "गुजरात लोक सेवा आयोग",
+    "state": "Gujarat",
+    "url_hosts": [
+      "gpsc.gujarat.gov.in",
+      "ojas.gujarat.gov.in"
+    ],
+    "search_aliases": [
+      "gpsc",
+      "gujarat psc"
+    ],
+    "exam_aliases": [
+      "Class 1",
+      "Class 2",
+      "GPSC Class I"
+    ]
+  },
+  {
+    "code": "GPSC_GOA",
+    "name_en": "Goa Public Service Commission",
+    "name_hi": "गोवा लोक सेवा आयोग",
+    "state": "Goa",
+    "url_hosts": [
+      "gpsc.goa.gov.in"
+    ],
+    "search_aliases": [
+      "goa psc",
+      "gpsc goa"
+    ],
+    "exam_aliases": [
+      "Goa Civil Service"
+    ]
+  },
+  {
+    "code": "MPSC",
+    "name_en": "Maharashtra Public Service Commission",
+    "name_hi": "महाराष्ट्र लोक सेवा आयोग",
+    "state": "Maharashtra",
+    "url_hosts": [
+      "mpsc.gov.in",
+      "mpscmaha.gov.in"
+    ],
+    "search_aliases": [
+      "mpsc",
+      "rajyaseva",
+      "maharashtra psc"
+    ],
+    "exam_aliases": [
+      "Rajyaseva",
+      "राज्यसेवा",
+      "PSI",
+      "STI",
+      "ASO"
+    ]
+  },
+  {
+    "code": "MPSC_MANIPUR",
+    "name_en": "Manipur Public Service Commission",
+    "name_hi": "मणिपुर लोक सेवा आयोग",
+    "state": "Manipur",
+    "url_hosts": [
+      "mpscmanipur.gov.in",
+      "mpscmanipur.nic.in"
+    ],
+    "search_aliases": [
+      "manipur psc",
+      "mpsc manipur"
+    ],
+    "exam_aliases": [
+      "MCS",
+      "Manipur Civil Service"
+    ]
+  },
+  {
+    "code": "APSC",
+    "name_en": "Assam Public Service Commission",
+    "name_hi": "असम लोक सेवा आयोग",
+    "state": "Assam",
+    "url_hosts": [
+      "apsc.nic.in",
+      "apsc.assam.gov.in"
+    ],
+    "search_aliases": [
+      "apsc",
+      "cce",
+      "assam psc"
+    ],
+    "exam_aliases": [
+      "CCE",
+      "Combined Competitive Examination"
+    ]
+  },
+  {
+    "code": "OPSC",
+    "name_en": "Odisha Public Service Commission",
+    "name_hi": "ओडिशा लोक सेवा आयोग",
+    "state": "Odisha",
+    "url_hosts": [
+      "opsc.gov.in"
+    ],
+    "search_aliases": [
+      "opsc",
+      "oas",
+      "odisha psc",
+      "orsc"
+    ],
+    "exam_aliases": [
+      "OAS",
+      "Odisha Civil Services"
+    ]
+  },
+  {
+    "code": "WBPSC",
+    "name_en": "West Bengal Public Service Commission",
+    "name_hi": "पश्चिम बंगाल लोक सेवा आयोग",
+    "state": "West Bengal",
+    "url_hosts": [
+      "pscwbonline.gov.in",
+      "wbpsc.gov.in",
+      "pscwb.org.in"
+    ],
+    "search_aliases": [
+      "wbpsc",
+      "wbcs",
+      "west bengal psc"
+    ],
+    "exam_aliases": [
+      "WBCS",
+      "West Bengal Civil Service"
+    ]
+  },
+  {
+    "code": "TNPSC",
+    "name_en": "Tamil Nadu Public Service Commission",
+    "name_hi": "तमिलनाडु लोक सेवा आयोग",
+    "state": "Tamil Nadu",
+    "url_hosts": [
+      "tnpsc.gov.in"
+    ],
+    "search_aliases": [
+      "tnpsc",
+      "group 1",
+      "group 2",
+      "group 4",
+      "tnpsc group 1"
+    ],
+    "exam_aliases": [
+      "Group 1",
+      "Group 2",
+      "Group 4",
+      "CCSE"
+    ]
+  },
+  {
+    "code": "APPSC",
+    "name_en": "Andhra Pradesh Public Service Commission",
+    "name_hi": "आंध्र प्रदेश लोक सेवा आयोग",
+    "state": "Andhra Pradesh",
+    "url_hosts": [
+      "psc.ap.gov.in",
+      "appsc.gov.in"
+    ],
+    "search_aliases": [
+      "appsc",
+      "andhra pradesh psc",
+      "ap psc"
+    ],
+    "exam_aliases": [
+      "Group 1",
+      "Group 2",
+      "Group 3"
+    ]
+  },
+  {
+    "code": "TSPSC",
+    "name_en": "Telangana State Public Service Commission",
+    "name_hi": "तेलंगाना राज्य लोक सेवा आयोग",
+    "state": "Telangana",
+    "url_hosts": [
+      "tspsc.gov.in"
+    ],
+    "search_aliases": [
+      "tspsc",
+      "telangana psc"
+    ],
+    "exam_aliases": [
+      "Group 1",
+      "Group 2",
+      "Group 3"
+    ]
+  },
+  {
+    "code": "KPSC",
+    "name_en": "Karnataka Public Service Commission",
+    "name_hi": "कर्नाटक लोक सेवा आयोग",
+    "state": "Karnataka",
+    "url_hosts": [
+      "kpsc.kar.nic.in",
+      "kpsc.karnataka.gov.in"
+    ],
+    "search_aliases": [
+      "kpsc",
+      "kas",
+      "karnataka psc"
+    ],
+    "exam_aliases": [
+      "KAS",
+      "Karnataka Administrative Service",
+      "Group A",
+      "Group B"
+    ]
+  },
+  {
+    "code": "KPPSC",
+    "name_en": "Kerala Public Service Commission",
+    "name_hi": "केरल लोक सेवा आयोग",
+    "state": "Kerala",
+    "url_hosts": [
+      "keralapsc.gov.in",
+      "thulasi.keralapsc.gov.in"
+    ],
+    "search_aliases": [
+      "kerala psc",
+      "kppsc",
+      "keralapsc"
+    ],
+    "exam_aliases": [
+      "KAS",
+      "Degree Level"
+    ]
+  },
+  {
+    "code": "HPPSC",
+    "name_en": "Himachal Pradesh Public Service Commission",
+    "name_hi": "हिमाचल प्रदेश लोक सेवा आयोग",
+    "state": "Himachal Pradesh",
+    "url_hosts": [
+      "hppsc.hp.gov.in"
+    ],
+    "search_aliases": [
+      "hppsc",
+      "hpas",
+      "himachal psc"
+    ],
+    "exam_aliases": [
+      "HPAS",
+      "HAS"
+    ]
+  },
+  {
+    "code": "JKPSC",
+    "name_en": "Jammu and Kashmir Public Service Commission",
+    "name_hi": "जम्मू और कश्मीर लोक सेवा आयोग",
+    "state": "Jammu and Kashmir",
+    "url_hosts": [
+      "jkpsc.nic.in"
+    ],
+    "search_aliases": [
+      "jkpsc",
+      "jkas",
+      "jammu kashmir psc"
+    ],
+    "exam_aliases": [
+      "JKAS",
+      "Combined Competitive"
+    ]
+  },
+  {
+    "code": "APPSC_AR",
+    "name_en": "Arunachal Pradesh Public Service Commission",
+    "name_hi": "अरुणाचल प्रदेश लोक सेवा आयोग",
+    "state": "Arunachal Pradesh",
+    "url_hosts": [
+      "appsc.gov.in",
+      "psc.arunachal.gov.in"
+    ],
+    "search_aliases": [
+      "arunachal psc",
+      "appsc arunachal"
+    ],
+    "exam_aliases": [
+      "APPSCCE",
+      "Combined Competitive"
+    ]
+  },
+  {
+    "code": "MPSC_MZ",
+    "name_en": "Mizoram Public Service Commission",
+    "name_hi": "मिजोरम लोक सेवा आयोग",
+    "state": "Mizoram",
+    "url_hosts": [
+      "mpsc.mizoram.gov.in"
+    ],
+    "search_aliases": [
+      "mizoram psc"
+    ],
+    "exam_aliases": [
+      "MCS"
+    ]
+  },
+  {
+    "code": "NPSC",
+    "name_en": "Nagaland Public Service Commission",
+    "name_hi": "नागालैंड लोक सेवा आयोग",
+    "state": "Nagaland",
+    "url_hosts": [
+      "npsc.nagaland.gov.in"
+    ],
+    "search_aliases": [
+      "npsc",
+      "nagaland psc"
+    ],
+    "exam_aliases": [
+      "NCS"
+    ]
+  },
+  {
+    "code": "MePSC",
+    "name_en": "Meghalaya Public Service Commission",
+    "name_hi": "मेघालय लोक सेवा आयोग",
+    "state": "Meghalaya",
+    "url_hosts": [
+      "mpsc.nic.in",
+      "megpsc.gov.in"
+    ],
+    "search_aliases": [
+      "meghalaya psc",
+      "mepsc"
+    ],
+    "exam_aliases": [
+      "MCS"
+    ]
+  },
+  {
+    "code": "TPSC",
+    "name_en": "Tripura Public Service Commission",
+    "name_hi": "त्रिपुरा लोक सेवा आयोग",
+    "state": "Tripura",
+    "url_hosts": [
+      "tpsc.tripura.gov.in"
+    ],
+    "search_aliases": [
+      "tpsc",
+      "tripura psc"
+    ],
+    "exam_aliases": [
+      "TCS",
+      "TPS"
+    ]
+  },
+  {
+    "code": "SPSC",
+    "name_en": "Sikkim Public Service Commission",
+    "name_hi": "सिक्किम लोक सेवा आयोग",
+    "state": "Sikkim",
+    "url_hosts": [
+      "spsc.sikkim.gov.in",
+      "spscskm.gov.in"
+    ],
+    "search_aliases": [
+      "sikkim psc",
+      "spsc"
+    ],
+    "exam_aliases": [
+      "SCS"
+    ]
+  },
+  {
+    "code": "SCI",
+    "name_en": "Supreme Court of India",
+    "name_hi": "भारत का सर्वोच्च न्यायालय",
+    "state": null,
+    "url_hosts": [
+      "sci.gov.in",
+      "main.sci.gov.in"
+    ],
+    "search_aliases": [
+      "supreme court",
+      "sci"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "HIGH_COURT",
+    "name_en": "High Court",
+    "name_hi": "उच्च न्यायालय",
+    "state": null,
+    "url_hosts": [
+      "hc.nic.in",
+      "allahabadhighcourt.in",
+      "bombayhighcourt.nic.in",
+      "highcourt.cg.gov.in",
+      "mphc.gov.in",
+      "hcraj.nic.in"
+    ],
+    "search_aliases": [
+      "high court"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "MPESB",
+    "name_en": "Madhya Pradesh Employees Selection Board",
+    "name_hi": "मध्य प्रदेश कर्मचारी चयन मण्डल",
+    "state": "Madhya Pradesh",
+    "url_hosts": [
+      "esb.mp.gov.in",
+      "peb.mp.gov.in",
+      "vyapam.nic.in",
+      "esb.mponline.gov.in"
+    ],
+    "search_aliases": [
+      "vyapam",
+      "peb",
+      "esb",
+      "mpesb",
+      "mp peb",
+      "mp vyapam"
+    ],
+    "exam_aliases": [
+      "PEB",
+      "ESB",
+      "Group 2",
+      "Group 3",
+      "Patwari",
+      "Van Rakshak"
+    ]
+  },
+  {
+    "code": "CGVYAPAM",
+    "name_en": "Chhattisgarh Professional Examination Board",
+    "name_hi": "छत्तीसगढ़ व्यावसायिक परीक्षा मण्डल",
+    "state": "Chhattisgarh",
+    "url_hosts": [
+      "vyapamcg.cgstate.gov.in",
+      "vyapamprofile.cgstate.gov.in"
+    ],
+    "search_aliases": [
+      "cg vyapam",
+      "cgvyapam",
+      "chhattisgarh vyapam",
+      "vyapamcg"
+    ],
+    "exam_aliases": [
+      "TET",
+      "SET",
+      "LSAT",
+      "CG-SET"
+    ]
+  },
+  {
+    "code": "RSMSSB",
+    "name_en": "Rajasthan Subordinate and Ministerial Services Selection Board",
+    "name_hi": "राजस्थान अधीनस्थ एवं मंत्रालयिक सेवा चयन बोर्ड",
+    "state": "Rajasthan",
+    "url_hosts": [
+      "rsmssb.rajasthan.gov.in",
+      "rssb.rajasthan.gov.in"
+    ],
+    "search_aliases": [
+      "rsmssb",
+      "rssb",
+      "rajasthan ssb"
+    ],
+    "exam_aliases": [
+      "Patwari",
+      "REET",
+      "Clerk"
+    ]
+  },
+  {
+    "code": "HSSC",
+    "name_en": "Haryana Staff Selection Commission",
+    "name_hi": "हरियाणा कर्मचारी चयन आयोग",
+    "state": "Haryana",
+    "url_hosts": [
+      "hssc.gov.in",
+      "hssc.hryssc.com"
+    ],
+    "search_aliases": [
+      "hssc",
+      "haryana ssc"
+    ],
+    "exam_aliases": [
+      "CET",
+      "Group C",
+      "Group D"
+    ]
+  },
+  {
+    "code": "UKSSSC",
+    "name_en": "Uttarakhand Subordinate Service Selection Commission",
+    "name_hi": "उत्तराखण्ड अधीनस्थ सेवा चयन आयोग",
+    "state": "Uttarakhand",
+    "url_hosts": [
+      "sssc.uk.gov.in",
+      "ukssscrecruitment.in",
+      "uksssc.co.in"
+    ],
+    "search_aliases": [
+      "uksssc",
+      "uttarakhand sssc"
+    ],
+    "exam_aliases": [
+      "Group C",
+      "Patwari"
+    ]
+  },
+  {
+    "code": "OSSC",
+    "name_en": "Odisha Staff Selection Commission",
+    "name_hi": "ओडिशा कर्मचारी चयन आयोग",
+    "state": "Odisha",
+    "url_hosts": [
+      "ossc.gov.in",
+      "www.ossc.gov.in"
+    ],
+    "search_aliases": [
+      "ossc",
+      "odisha ssc"
+    ],
+    "exam_aliases": [
+      "CGL",
+      "Combined Recruitment"
+    ]
+  },
+  {
+    "code": "JSSC",
+    "name_en": "Jharkhand Staff Selection Commission",
+    "name_hi": "झारखंड कर्मचारी चयन आयोग",
+    "state": "Jharkhand",
+    "url_hosts": [
+      "jssc.jharkhand.gov.in"
+    ],
+    "search_aliases": [
+      "jssc",
+      "jharkhand ssc"
+    ],
+    "exam_aliases": [
+      "CGL",
+      "JGGLCCE"
+    ]
+  },
+  {
+    "code": "GSSSB",
+    "name_en": "Gujarat Subordinate Services Selection Board",
+    "name_hi": "गुजरात गौण सेवा चयन मण्डल",
+    "state": "Gujarat",
+    "url_hosts": [
+      "gsssb.gujarat.gov.in",
+      "ojas.gujarat.gov.in"
+    ],
+    "search_aliases": [
+      "gsssb",
+      "gujarat sssb"
+    ],
+    "exam_aliases": [
+      "CCE",
+      "Class 3"
+    ]
+  },
+  {
+    "code": "OSSSC",
+    "name_en": "Odisha Sub-ordinate Staff Selection Commission",
+    "name_hi": "ओडिशा अधीनस्थ कर्मचारी चयन आयोग",
+    "state": "Odisha",
+    "url_hosts": [
+      "osssc.gov.in"
+    ],
+    "search_aliases": [
+      "osssc"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "BPSSC",
+    "name_en": "Bihar Police Subordinate Services Commission",
+    "name_hi": "बिहार पुलिस अधीनस्थ सेवा आयोग",
+    "state": "Bihar",
+    "url_hosts": [
+      "bpssc.bih.nic.in",
+      "bpssc.bihar.gov.in"
+    ],
+    "search_aliases": [
+      "bpssc",
+      "bihar police"
+    ],
+    "exam_aliases": [
+      "SI",
+      "Sergeant"
+    ]
+  },
+  {
+    "code": "WBSSC",
+    "name_en": "West Bengal Staff Selection Commission",
+    "name_hi": "पश्चिम बंगाल कर्मचारी चयन आयोग",
+    "state": "West Bengal",
+    "url_hosts": [
+      "wbssc.gov.in"
+    ],
+    "search_aliases": [
+      "wbssc"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "HPRCA",
+    "name_en": "Himachal Pradesh Staff Selection Commission",
+    "name_hi": "हिमाचल प्रदेश कर्मचारी चयन आयोग",
+    "state": "Himachal Pradesh",
+    "url_hosts": [
+      "hpsssb.hp.gov.in"
+    ],
+    "search_aliases": [
+      "hpsssb",
+      "hpssc"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "AIIMS",
+    "name_en": "All India Institute of Medical Sciences",
+    "name_hi": "अखिल भारतीय आयुर्विज्ञान संस्थान",
+    "state": null,
+    "url_hosts": [
+      "aiims.edu",
+      "aiimsexams.ac.in"
+    ],
+    "search_aliases": [
+      "aiims",
+      "norcet"
+    ],
+    "exam_aliases": [
+      "NORCET"
+    ]
+  },
+  {
+    "code": "PGIMER",
+    "name_en": "Postgraduate Institute of Medical Education and Research",
+    "name_hi": "",
+    "state": null,
+    "url_hosts": [
+      "pgimer.edu.in"
+    ],
+    "search_aliases": [
+      "pgimer"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "ESIC",
+    "name_en": "Employees State Insurance Corporation",
+    "name_hi": "कर्मचारी राज्य बीमा निगम",
+    "state": null,
+    "url_hosts": [
+      "esic.gov.in",
+      "esic.nic.in"
+    ],
+    "search_aliases": [
+      "esic"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "KVS",
+    "name_en": "Kendriya Vidyalaya Sangathan",
+    "name_hi": "केन्द्रीय विद्यालय संगठन",
+    "state": null,
+    "url_hosts": [
+      "kvsangathan.nic.in"
+    ],
+    "search_aliases": [
+      "kvs"
+    ],
+    "exam_aliases": [
+      "PRT",
+      "TGT",
+      "PGT"
+    ]
+  },
+  {
+    "code": "NVS",
+    "name_en": "Navodaya Vidyalaya Samiti",
+    "name_hi": "नवोदय विद्यालय समिति",
+    "state": null,
+    "url_hosts": [
+      "navodaya.gov.in"
+    ],
+    "search_aliases": [
+      "nvs"
+    ],
+    "exam_aliases": [
+      "PRT",
+      "TGT",
+      "PGT"
+    ]
+  },
+  {
+    "code": "POLICE",
+    "name_en": "State Police Headquarters",
+    "name_hi": "पुलिस मुख्यालय",
+    "state": null,
+    "url_hosts": [],
+    "search_aliases": [
+      "police"
+    ],
+    "exam_aliases": []
+  },
+  {
+    "code": "DSSSB",
+    "name_en": "Delhi Subordinate Services Selection Board",
+    "name_hi": "दिल्ली अधीनस्थ सेवा चयन बोर्ड",
+    "state": null,
+    "url_hosts": [
+      "dsssb.delhi.gov.in"
+    ],
+    "search_aliases": [
+      "dsssb",
+      "delhi dsssb"
+    ],
+    "exam_aliases": [
+      "TGT",
+      "PGT",
+      "PRT"
+    ]
+  },
+  {
+    "code": "BSSC",
+    "name_en": "Bihar Staff Selection Commission",
+    "name_hi": "बिहार कर्मचारी चयन आयोग",
+    "state": "Bihar",
+    "url_hosts": [
+      "bssc.bihar.gov.in"
+    ],
+    "search_aliases": [
+      "bssc",
+      "bihar ssc"
+    ],
+    "exam_aliases": [
+      "Inter Level",
+      "CGL"
+    ]
+  },
+  {
+    "code": "UPSSSC",
+    "name_en": "Uttar Pradesh Subordinate Services Selection Commission",
+    "name_hi": "उत्तर प्रदेश अधीनस्थ सेवा चयन आयोग",
+    "state": "Uttar Pradesh",
+    "url_hosts": [
+      "upsssc.gov.in"
+    ],
+    "search_aliases": [
+      "upsssc"
+    ],
+    "exam_aliases": [
+      "PET",
+      "VDO"
+    ]
+  }
+]

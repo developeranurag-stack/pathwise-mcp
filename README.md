@@ -1,33 +1,60 @@
 # pathwise-mcp — Gov Job Extractor MCP Server
 
-A single-file [MCP](https://modelcontextprotocol.io) server, built with [`fastmcp`](https://github.com/jlowin/fastmcp), for ingesting government job notification PDFs: copy a source PDF into local storage, extract its text, and save structured job details into a shared Postgres database.
+A [MCP](https://modelcontextprotocol.io) server, built with [`fastmcp`](https://github.com/jlowin/fastmcp), that ingests Indian government recruitment notifications: copy or fetch a PDF, classify the *kind* of notice and the issuing body, extract structured fields, and write them into the shared PathWise Postgres database.
 
-All server code lives in [server.py](server.py) — there is no other application code or test suite in this repo.
+Almost all server logic lives in [server.py](server.py). A generated [commission_registry.json](commission_registry.json) is written on import so the sibling `pathwise` app can reuse the same issuer list.
 
 ## Relationship to `pathwise`
 
-This server is a companion tool to the sibling `pathwise` Flask app. It writes job records into `pathwise`'s own Postgres (Neon) database — the `gov_job_notifications` / `gov_job_posts` tables — rather than a local SQLite file, and `pathwise` serves that data read-only at `/gov-jobs`.
+This server is a companion to the sibling `pathwise` Flask app. It **writes** `gov_job_notifications` / `gov_job_posts`; PathWise **reads** that data at `/gov-jobs`.
 
-This means:
-- `.env` here **must** hold the same `DATABASE_URL` as `pathwise/.env` — the two apps share one database, not two separate ones.
-- PDFs stay on local disk (`stored_pdfs/`); this only works cleanly when both projects run on the same host, since `pathwise` reads the stored path directly off disk to serve PDFs.
-- `init_db()` runs `ALTER TABLE ... ADD COLUMN IF NOT EXISTS` / `CREATE TABLE IF NOT EXISTS` on every startup, so it's safe to run against an already-seeded database.
+- `.env` here **must** hold the same `DATABASE_URL` as `pathwise/.env`.
+- PDFs live in `stored_pdfs/`. The database stores a **relative** path (`stored_pdfs/<file>.pdf`). PathWise resolves that against `../pathwise-mcp/stored_pdfs` (or `GOV_JOB_PDF_DIR`). Both processes should still run on the same host.
+- Do not introduce a second database or a local SQLite copy of this data.
 
-See [CLAUDE.md](CLAUDE.md) for the full architecture writeup, including the database schema, regional-language (`translations`) handling, and known caveats around PDF text extraction.
+- **Connecting an app** (PathWise or anything like it): **[INTEGRATING.md](INTEGRATING.md)** — shared DB, drop folder, search SQL, MCP tools, how to render `exam_kind`.
+- Schema, language rules, and extraction caveats: [CLAUDE.md](CLAUDE.md).
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # then fill in DATABASE_URL — same value as pathwise/.env
+cp .env.example .env   # set DATABASE_URL to the same Neon URL as pathwise
 python server.py
 ```
 
-`mcp.run()` starts the server over stdio, the transport MCP clients expect. On startup it creates `stored_pdfs/` (for locally stored PDF copies) and ensures the required Postgres tables/columns exist.
+`mcp.run()` speaks stdio (what MCP clients expect). On first DB use, `init_db()` creates/migrates tables. `stored_pdfs/` and `tobepicked/` are created next to `server.py`.
+
+Optional env (see [.env.example](.env.example)):
+
+| Variable | Role |
+|----------|------|
+| `LLM_API_KEY` / `XAI_API_KEY` | If unset, auto-extract logs `LLM_SKIP` and uses the deterministic fallback |
+| `FETCH_COMMISSIONS` | `true` to crawl official sites in the background (off by default) |
+| `FETCH_INTERVAL_SECONDS` | Default `21600` (6 hours) |
+| `FETCH_MAX_PDFS_PER_HOST` | Default `3` new PDFs per host per run |
+| `POLL_SECONDS` | How often `tobepicked/` is scanned (default `5`) |
+
+## How notifications get in
+
+Three equivalent ingest paths:
+
+1. **Admin drop folder** — PathWise admin uploads a PDF into `tobepicked/`. The poller stores it, extracts, quality-gates, and saves.
+2. **One MCP call** — `ingest_notification(path)` does store + extract + save.
+3. **Website fetch** — `fetch_commission_notices` (or `python server.py --fetch --apply`) crawls every registered official host, downloads new advertisement PDFs into `tobepicked/`, then the same extract/save path runs.
+
+The extractor classifies each PDF as one of:
+
+- `combined_exam` — one exam, many cadres (UPSC CSE, State PSC SSE/PCS, SSC CGL). Title is the **exam**, never the first cadre line.
+- `multi_post_ad` — one advertisement, several posts (UPSC ORA / High Court combo).
+- `single_post` — one post.
+- `departmental_exam` — named specialist exam (State Engineering Service, Assistant Librarian Exam).
+
+It also fills `commission`, `state`, `exam_name`, and `search_document` so students can find rows with queries like `cgpsc`, `ssc cgl`, `mppsc`, `vyapam`.
 
 ## Using it from an MCP client
 
-Register `server.py` with your MCP client (Claude Desktop, Claude Code, etc.), pointing at this repo's Python environment. Example `.mcp.json` entry:
+Point the client at this repo’s Python environment. Example `.mcp.json`:
 
 ```json
 {
@@ -40,51 +67,77 @@ Register `server.py` with your MCP client (Claude Desktop, Claude Code, etc.), p
 }
 ```
 
+Docker alternative (adjust host paths; image must be built first) is in this repo’s `.mcp.json`.
+
 ## What it exposes
 
-- **Tool** `store_notification_pdf` — copies a source PDF into `stored_pdfs/`, returning the resolved local path.
-- **Resource** `pdf://{file_path}` — extracts and returns text from a stored PDF.
-- **Resource** `job-pdf://{job_id}` — looks up a saved job by ID and returns its stored PDF path plus extracted text.
-- **Prompt** `extract_gov_job_details` — guides the calling model through extracting structured fields (title, department, vacancies, qualification, age limit/relaxation, dates, fee, per-post breakdowns, regional-language translations, syllabus, etc.) from notification text.
-- **Tool** `save_job_to_database` — persists the extracted notification-level fields into `gov_job_notifications`, plus one row per post into `gov_job_posts` when a `posts` list is provided.
-- **Tool** `view_official_notification` — returns a saved job's local PDF path and/or official URL without extracting text.
+**Ingest / extract**
 
-## Workflow
+- `ingest_notification(source_pdf_path)` — store, extract, quality-gate, save in one step.
+- `store_notification_pdf` — copy a PDF into `stored_pdfs/` (still used by the multi-step flow).
+- `save_job_to_database` — persist fields; new args `commission`, `state`, `exam_name`, `exam_kind`, `search_aliases` default empty so old callers keep working.
+- `process_pending_uploads` — scan `tobepicked/` end-to-end.
+- `reingest_job(job_id)` — re-extract a saved row from its stored PDF.
+- Prompt `extract_gov_job_details` — kind-aware instructions for a calling model.
 
-1. Call `store_notification_pdf` with a source PDF path.
-2. Read the `pdf://{file_path}` resource to get the extracted text.
-3. Follow the `extract_gov_job_details` prompt to pull structured fields out of that text.
-4. Call `save_job_to_database` to persist the result.
+**Fetch**
 
-Retrieval later goes through `job-pdf://{job_id}` or `view_official_notification`, independent of ingestion.
+- `fetch_commission_notices(codes="", dry_run=true, max_pdfs_per_host=3)` — crawl official PSC / SSC / UPSC / RRB / exam-board sites. Empty `codes` means every registered issuer. `dry_run=true` only lists PDF URLs.
+
+**Read**
+
+- Resource `pdf://{file_path}` — extract text (`pdftotext -layout`, then pdfplumber, then pypdf).
+- Resource `job-pdf://{job_id}` — stored path + text for a saved job.
+- `view_official_notification(job_id)` — local PDF path and/or official URL.
+- `list_recent_jobs(limit)` — id, commission, kind, title, apply window.
+
+## Website fetch (all registered Indian issuers)
+
+The crawler is data-driven from `COMMISSION_REGISTRY` in `server.py` — not a hard-coded CG/UPSC/SSC list. It includes:
+
+- National: UPSC, SSC, RRB, IBPS, SBI, RBI, NTA
+- Every State PSC in the registry (CGPSC, MPPSC, UPPSC, BPSC, RPSC, TNPSC, …)
+- Exam boards: **CG VYAPAM** (`vyapamcg.cgstate.gov.in`, including `/Posts?tag=ONLINEAPPLICATION`), **MP ESB / Vyapam** (`esb.mp.gov.in/e_default.html`), RSMSSB, HSSC, UKSSSC, OSSC, JSSC, GSSSB, DSSSB, BSSC, UPSSSC, and similar
+- High Courts / SCI, AIIMS, ESIC, KVS, NVS when hosts are listed
+
+It follows iframe shells (MP ESB), query-string listing pages (CG VYAPAM), and skips admit cards, results, FAQ, and RTI PDFs. Some national sites (notably UPSC) return HTTP 403 from datacenter IPs; those hosts are logged and skipped.
+
+One-shot from the shell:
+
+```bash
+# list PDFs only
+python server.py --fetch --codes=CGVYAPAM,MPESB
+
+# download + extract
+python server.py --fetch --apply --codes=CGVYAPAM,MPESB
+```
+
+Background fetch (every 6 hours once the server is running):
+
+```
+FETCH_COMMISSIONS=true
+```
+
+## Commands
+
+```bash
+python server.py                 # MCP stdio + pickup poller
+python server.py --self-test     # classifier / splitter / fetch-seed checks (no DB required)
+python server.py --reingest      # re-extract PDFs already in stored_pdfs/
+python server.py --fetch         # dry-run crawl
+python server.py --fetch --apply --codes=CGPSC,MPESB
+```
 
 ## Running with Docker
 
-Build once:
-
 ```bash
 docker build -t pathwise-mcp .
-```
-
-Prepare env (critical: same `DATABASE_URL` as pathwise):
-
-```bash
-cp .env.example .env
-# edit .env with the real shared Neon URL
-```
-
-Start (stdio mode for MCP clients):
-
-```bash
+cp .env.example .env   # real shared DATABASE_URL
 docker run -i --rm \
   --env-file .env \
   -v "$(pwd)/stored_pdfs:/app/stored_pdfs" \
+  -v "$(pwd)/tobepicked:/app/tobepicked" \
   pathwise-mcp
 ```
 
-For MCP client registration (e.g. `.mcp.json` or claude config), use the `docker` command + args shown in this repo's `.mcp.json` (adjust host paths as needed).
-
-**Caveat**: `local_pdf_path` saved to DB will be the *container* absolute path (e.g. `/app/stored_pdfs/...`). For the sibling `pathwise` to serve PDFs by direct FS read, either:
-- also run `pathwise` in a container with identical volume mount, or
-- bind-mount in a way that the recorded path is reachable from the host `pathwise` process.
-See AGENTS.md and CLAUDE.md for the shared state requirements.
+Relative `stored_pdfs/<name>` paths work across container and host as long as PathWise can see the same files (shared volume or `GOV_JOB_PDF_DIR`).
