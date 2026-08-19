@@ -1,6 +1,6 @@
 # Integrating with pathwise-mcp
 
-This guide is for applications like [PathWise](https://github.com/) — student career apps, counselling UIs, or admin consoles — that need official Indian government job notifications without re-implementing PDF extraction.
+This guide is for student career apps, counselling UIs, or admin consoles that need official Indian government job notifications without re-implementing PDF extraction. PathWise is one such consumer; any similar app can follow the same contract.
 
 **pathwise-mcp writes. Your app reads.**  
 The MCP server is the ingest pipeline. Your application should almost never parse recruitment PDFs itself.

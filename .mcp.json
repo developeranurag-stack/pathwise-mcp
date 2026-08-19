@@ -7,9 +7,11 @@
         "--rm",
         "-i",
         "--env-file",
-        "C:\\androidprojects\\pathwise-mcp\\.env",
+        "/absolute/path/to/pathwise-mcp/.env",
         "-v",
-        "C:\\androidprojects\\pathwise-mcp\\stored_pdfs:/app/stored_pdfs",
+        "/absolute/path/to/pathwise-mcp/stored_pdfs:/app/stored_pdfs",
+        "-v",
+        "/absolute/path/to/pathwise-mcp/tobepicked:/app/tobepicked",
         "pathwise-mcp"
       ]
     }

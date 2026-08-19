@@ -2,7 +2,13 @@ venv/
 .venv/
 __pycache__/
 *.pyc
+*.pyo
 stored_pdfs/
 .env
+.env.*
+!.env.example
 tobeextracted/
 tobepicked/
+*.log
+mcp_read_log.txt
+.DS_Store

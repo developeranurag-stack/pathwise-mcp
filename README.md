@@ -1,25 +1,31 @@
 # pathwise-mcp — Gov Job Extractor MCP Server
 
-A [MCP](https://modelcontextprotocol.io) server, built with [`fastmcp`](https://github.com/jlowin/fastmcp), that ingests Indian government recruitment notifications: copy or fetch a PDF, classify the *kind* of notice and the issuing body, extract structured fields, and write them into the shared PathWise Postgres database.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![self-test](https://github.com/developeranurag-stack/pathwise-mcp/actions/workflows/self-test.yml/badge.svg)](https://github.com/developeranurag-stack/pathwise-mcp/actions/workflows/self-test.yml)
 
-Almost all server logic lives in [server.py](server.py). A generated [commission_registry.json](commission_registry.json) is written on import so the sibling `pathwise` app can reuse the same issuer list.
+An open-source [MCP](https://modelcontextprotocol.io) server, built with [`fastmcp`](https://github.com/jlowin/fastmcp), that ingests Indian government recruitment notifications: copy or fetch a PDF, classify the *kind* of notice and the issuing body, extract structured fields, and write them into Postgres.
 
-## Relationship to `pathwise`
+Almost all server logic lives in [server.py](server.py). A generated [commission_registry.json](commission_registry.json) is written on import so consumer apps can reuse the same issuer list.
 
-This server is a companion to the sibling `pathwise` Flask app. It **writes** `gov_job_notifications` / `gov_job_posts`; PathWise **reads** that data at `/gov-jobs`.
+This repo is the ingest pipeline. Any career / counselling app can read the tables it writes. The original consumer is PathWise; you do not need that app to run or fork this server.
 
-- `.env` here **must** hold the same `DATABASE_URL` as `pathwise/.env`.
-- PDFs live in `stored_pdfs/`. The database stores a **relative** path (`stored_pdfs/<file>.pdf`). PathWise resolves that against `../pathwise-mcp/stored_pdfs` (or `GOV_JOB_PDF_DIR`). Both processes should still run on the same host.
+## Using it from your own app
+
+This server **writes** `gov_job_notifications` / `gov_job_posts`. Your app **reads** that data.
+
+- `.env` here must hold the **same** `DATABASE_URL` as the app that serves the jobs.
+- PDFs live in `stored_pdfs/`. The database stores a **relative** path (`stored_pdfs/<file>.pdf`). Resolve that against this directory, or set `GOV_JOB_PDF_DIR`.
 - Do not introduce a second database or a local SQLite copy of this data.
 
-- **Connecting an app** (PathWise or anything like it): **[INTEGRATING.md](INTEGRATING.md)** — shared DB, drop folder, search SQL, MCP tools, how to render `exam_kind`.
+- **Connecting an app**: **[INTEGRATING.md](INTEGRATING.md)** — shared DB, drop folder, search SQL, MCP tools, how to render `exam_kind`.
 - Schema, language rules, and extraction caveats: [CLAUDE.md](CLAUDE.md).
+- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # set DATABASE_URL to the same Neon URL as pathwise
+cp .env.example .env   # set DATABASE_URL to the same Postgres URL as your app
 python server.py
 ```
 
@@ -39,7 +45,7 @@ Optional env (see [.env.example](.env.example)):
 
 Three equivalent ingest paths:
 
-1. **Admin drop folder** — PathWise admin uploads a PDF into `tobepicked/`. The poller stores it, extracts, quality-gates, and saves.
+1. **Admin drop folder** — upload a PDF into `tobepicked/`. The poller stores it, extracts, quality-gates, and saves.
 2. **One MCP call** — `ingest_notification(path)` does store + extract + save.
 3. **Website fetch** — `fetch_commission_notices` (or `python server.py --fetch --apply`) crawls every registered official host, downloads new advertisement PDFs into `tobepicked/`, then the same extract/save path runs.
 
@@ -140,4 +146,12 @@ docker run -i --rm \
   pathwise-mcp
 ```
 
-Relative `stored_pdfs/<name>` paths work across container and host as long as PathWise can see the same files (shared volume or `GOV_JOB_PDF_DIR`).
+Relative `stored_pdfs/<name>` paths work across container and host as long as the reading app can see the same files (shared volume or `GOV_JOB_PDF_DIR`).
+
+## Contributing
+
+Bug reports, new commission entries, and extraction fixes are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please do not open public issues for security problems — use [SECURITY.md](SECURITY.md).
+
+## License
+
+[MIT](LICENSE) © 2026 Anurag Prem Soni.
